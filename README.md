@@ -15,7 +15,6 @@ Certifique-se de que você tenha os seguintes requisitos instalados em sua máqu
 
 Abra o terminal e execute o comando abaixo para clonar o repositório para o seu ambiente local:
 
-```bash
 
 git clone https://github.com/seu-usuario/seu-repositorio.git
 
