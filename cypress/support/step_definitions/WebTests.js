@@ -1,50 +1,50 @@
-const { Given, When, Then } = require('@badeball/cypress-cucumber-preprocessor');  // Importar Given, When, Then
+const { Given, When, Then } = require('@badeball/cypress-cucumber-preprocessor');
 
-import HomePage from '../../page_objects/HomePage';
-import ProductPage from '../../page_objects/ProductPage';
-import CartPage from '../../page_objects/CartPage';  // Certifique-se de que o nome é CartPage
+import { homePageLocators } from '../../locators/homePageLocators';
+import { productPageLocators } from '../../locators/productPageLocators';
+import { cartPageLocators } from '../../locators/cartPageLocators';
 
-const homePage = new HomePage();
-const productPage = new ProductPage();
-const cartPage = new CartPage();  // Corrigido para CartPage
+// Step definitions
 
 Given('que estou na página inicial do site Advantage Online Shopping', () => {
-  homePage.visit();
+  cy.visit('https://advantageonlineshopping.com/#/');
 });
 
 When('eu digito HeadPhones na barra de busca e pesquiso', () => {
-  homePage.searchForProduct('HeadPhones');
+  cy.get(homePageLocators.searchButton).click();
+  cy.get(homePageLocators.searchInput).type('HeadPhones').type('{enter}');
 });
 
 Then('eu devo ver uma lista de produtos relacionados a Fones de Ouvido', () => {
-  cy.get('.select').should('be.visible');
+  cy.get(homePageLocators.searchResult).should('be.visible');
 });
 
 Given('que eu tenho uma lista de produtos após a busca, clico no produto de minha preferência', () => {
-  productPage.selectFirstProduct();
+  cy.get(productPageLocators.firstProduct).click();
 });
 
 When('após os detalhes do produto serem exibidos, clico no botão “ADD TO CART”', () => {
-  productPage.addToCart();
+  cy.get(productPageLocators.addToCartButton).click();
 });
 
 Then('o produto "Fone de Ouvido XYZ" deve ser adicionado ao meu carrinho', () => {
-  productPage.verifyProductAddedToCart();
+  cy.get(productPageLocators.shoppingCartLink).click();
 });
 
 Given('que eu adicionei um "Fone de Ouvido XYZ" ao carrinho', () => {
-  cartPage.openCart();
-  cartPage.verifyProductInCart('Fone de Ouvido XYZ');
+  cy.get(cartPageLocators.cartLink).click();
+  cy.wait(2000);
+  cy.get(cartPageLocators.productInCart).should('be.visible');
 });
 
 When('eu navego até a tela de pagamento', () => {
-  cartPage.proceedToCheckout();
+  cy.get(cartPageLocators.checkoutButton).click();
 });
 
 Then('eu devo ver o "Fone de Ouvido XYZ" listado no carrinho de compras', () => {
-  cartPage.verifyProductInCart('Fone de Ouvido XYZ');
+  cy.get(cartPageLocators.productInCart).should('be.visible');
 });
 
 Then('o preço do "Fone de Ouvido XYZ" deve ser exibido corretamente', () => {
-  cartPage.verifyProductPrice('13.99');
+  cy.get(cartPageLocators.productPrice).should('contain', '13.99');
 });

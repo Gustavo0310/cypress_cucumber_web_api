@@ -1,14 +1,18 @@
+import { homePageLocators } from '../locators/homePageLocators';
+
 class HomePage {
-    visit() {
-      cy.visit('https://advantageonlineshopping.com/#/');
-    }
-  
-    searchForProduct(product) {
-      cy.get('#mobileSearch > .roboto-medium').click();
-      cy.get('#mobileSearch > .roboto-medium').type(product);
-      cy.get('#mobileSearch > .roboto-medium').type('{enter}');
-    }
+  visit() {
+    cy.visit('https://advantageonlineshopping.com/#/');
   }
-  
-  export default HomePage;
-  
+
+  searchForProduct(productName) {
+    cy.get(homePageLocators.searchButton).click();
+    cy.get(homePageLocators.searchInput).type(productName).type('{enter}');
+  }
+
+  verifySearchResults() {
+    cy.get(homePageLocators.searchResult).should('be.visible');
+  }
+}
+
+export default HomePage;
