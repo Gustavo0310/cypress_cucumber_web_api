@@ -28,7 +28,7 @@ Navegue para a pasta do projeto clonado:
 2. Instalar as dependências
 =======
 
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/viniciusmalachias/cypress_cucumber_web_api
 
 Navegue para a pasta do projeto clonado:
 
