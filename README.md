@@ -55,7 +55,8 @@ Este projeto utiliza o Cucumber para definir cenários de teste de maneira mais 
 O padrão PageObjects foi implementado para tornar o código de teste mais reutilizável e organizado.
 
 ### 8. Contato
-Caso encontre algum problema ou tenha dúvidas, entre em contato através do e-mail: seu-email@example.com.
+Caso encontre algum problema ou tenha dúvidas, entre em contato através do e-mail: Vinicius.malachiasti@gmail.com
+ou 11989669903
 
 
 ### Explicação do conteúdo:
