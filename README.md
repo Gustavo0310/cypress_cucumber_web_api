@@ -23,7 +23,7 @@ Navegue para a pasta do projeto clonado:
 cd seu-repositorio
 
 
-2. Instalar as dependências
+### 2. Instalar as dependências
 Instale as dependências do projeto usando o npm (que é instalado junto com o Node.js):
 npm install
 
