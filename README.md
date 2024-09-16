@@ -29,7 +29,7 @@ npm install
 
 Isso instalará todas as bibliotecas necessárias, incluindo Cypress, Cucumber e quaisquer outras dependências que o projeto exija.
 
-3. Executar os testes
+### 3. Executar os testes
 Para executar os testes utilizando o Cypress em modo headless (sem interface gráfica), execute o seguinte comando:
 npx cypress run
 
@@ -38,23 +38,23 @@ npx cypress open
 
 Isso abrirá a interface do Cypress, onde você pode selecionar e executar os testes manualmente.
 
-4. Estrutura do Projeto
+### 4. Estrutura do Projeto
 cypress/integration/: Contém os arquivos de teste em Gherkin (.feature) usando o Cucumber.
 cypress/pages/: Contém os arquivos PageObjects, que encapsulam a lógica de interação com as páginas.
 cypress/support/: Contém configurações e customizações do Cypress, como as definições dos steps do Cucumber.
 
-5. Executar um teste específico
+### 5. Executar um teste específico
 Caso queira rodar um teste específico, você pode indicar o caminho para o arquivo de testes usando:
 npx cypress run --spec "cypress/integration/path-to-your-test.feature"
 
-6. Alterações no Cypress config
+### 6. Alterações no Cypress config
 As configurações do Cypress foram ajustadas conforme as necessidades do projeto, mas essas modificações são transparentes para o usuário que deseja apenas rodar os testes.
 
-7. Informações adicionais
+### 7. Informações adicionais
 Este projeto utiliza o Cucumber para definir cenários de teste de maneira mais legível, no formato Gherkin.
 O padrão PageObjects foi implementado para tornar o código de teste mais reutilizável e organizado.
 
-8. Contato
+### 8. Contato
 Caso encontre algum problema ou tenha dúvidas, entre em contato através do e-mail: seu-email@example.com.
 
 
