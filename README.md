@@ -17,11 +17,11 @@ Abra o terminal e execute o comando abaixo para clonar o repositório para o seu
 
 ```bash
 
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/vmalachias/https://github.com/viniciusmalachias/cypress_cucumber_web_api.git
 
 Navegue para a pasta do projeto clonado:
 
-cd seu-repositorio
+ cd .\cypress_cucumber_web_api\
 
 
 2. Instalar as dependências
